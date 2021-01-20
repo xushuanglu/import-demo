@@ -1,9 +1,6 @@
 package com.example.importdemo;
 
-import com.xsl.Cricle;
-import com.xsl.MainConfig;
-import com.xsl.MainConfigTwo;
-import com.xsl.Triangle;
+import com.xsl.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,11 +14,19 @@ public class ImportDemoApplication {
 //        Cricle cricle = context.getBean(Cricle.class);
 //        cricle.sayHello();
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(MainConfigTwo.class);
+//        ApplicationContext context = new AnnotationConfigApplicationContext(MainConfigTwo.class);
+//        Cricle cricle = context.getBean(Cricle.class);
+//        Triangle triangle = context.getBean(Triangle.class);
+//        cricle.sayHello();
+//        triangle.sayHi();
+
+        ApplicationContext context = new AnnotationConfigApplicationContext(MainConfigureThree.class);
         Cricle cricle = context.getBean(Cricle.class);
         Triangle triangle = context.getBean(Triangle.class);
+        Rectangle rectangle = context.getBean(Rectangle.class);
         cricle.sayHello();
         triangle.sayHi();
+        rectangle.sayHi();
 
         SpringApplication.run(ImportDemoApplication.class, args);
     }
